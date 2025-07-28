@@ -23,8 +23,12 @@ a,
 
 @media (min-width: 1024px) {
   body {
-    display: flex;
     place-items: center;
+    /* font-family: var(--font-test); Não funciona */
+    font-family: 'Outfit', sans-serif;
+    font-weight: 100;
+    width: 50%;
+    overflow: hidden;
   }
 
   #app {
@@ -32,4 +36,16 @@ a,
     grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
   }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 600;
+  }
+}
+
+/* Roxinho moderno */
+::selection {
+  background-color: #8b5cf6;
+  color: white;
 }
