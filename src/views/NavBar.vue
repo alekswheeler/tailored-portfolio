@@ -1,9 +1,13 @@
 <template>
   <div class="navbar-container">
     <b-nav class="minimal-nav">
-      <b-nav-item class="nav-link-item">projetos</b-nav-item>
-      <b-nav-item class="nav-link-item">blog</b-nav-item>
-      <b-nav-item class="nav-link-item">contato</b-nav-item>
+      <div class="nav-links">
+        <b-nav-item href="#projects" class="nav-link-item">projetos</b-nav-item>
+        <b-nav-item href="https://dev.to/alekswheeler" target="_blank" class="nav-link-item">
+          blog
+        </b-nav-item>
+      </div>
+      <a href="mailto:aleks.vix@outlook.com" class="contact-button"> Enviar mensagem </a>
     </b-nav>
   </div>
 </template>
@@ -14,19 +18,27 @@ import { BNavItem, BNav } from 'bootstrap-vue-next'
 
 <style scoped>
 .navbar-container {
-  justify-content: center;
-  padding: 0.5rem 0;
+  padding: 1.5rem 0;
   display: flex;
+  justify-content: center;
   background: transparent;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .minimal-nav {
   display: flex;
-  gap: 2.5rem;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 2rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
   align-items: center;
 }
 
@@ -40,6 +52,7 @@ import { BNavItem, BNav } from 'bootstrap-vue-next'
 
 .nav-link-item :deep(a),
 .nav-link-item :deep(.nav-link) {
+  color: #666 !important;
   text-decoration: none !important;
   font-size: 0.95rem;
   font-weight: 400;
@@ -78,8 +91,34 @@ import { BNavItem, BNav } from 'bootstrap-vue-next'
 
 /* Remover estilos do Bootstrap */
 .nav-link-item :deep(.nav-link.active) {
+  color: #333 !important;
   background: transparent !important;
   border: none !important;
+}
+
+/* Botão de contato destacado */
+.contact-button {
+  color: #8b5cf6 !important;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid #8b5cf6;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  letter-spacing: 0.3px;
+  background: transparent;
+}
+
+.contact-button:hover {
+  background-color: #8b5cf6;
+  color: white !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+}
+
+.contact-button:active {
+  transform: translateY(0);
 }
 
 /* Responsivo */
@@ -89,6 +128,10 @@ import { BNavItem, BNav } from 'bootstrap-vue-next'
   }
 
   .minimal-nav {
+    padding: 0 1rem;
+  }
+
+  .nav-links {
     gap: 1.5rem;
   }
 
@@ -96,16 +139,26 @@ import { BNavItem, BNav } from 'bootstrap-vue-next'
   .nav-link-item :deep(.nav-link) {
     font-size: 0.9rem;
   }
+
+  .contact-button {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .minimal-nav {
+  .nav-links {
     gap: 1rem;
   }
 
   .nav-link-item :deep(a),
   .nav-link-item :deep(.nav-link) {
     font-size: 0.85rem;
+  }
+
+  .contact-button {
+    font-size: 0.8rem;
+    padding: 0.45rem 0.8rem;
   }
 }
 
@@ -117,7 +170,7 @@ import { BNavItem, BNav } from 'bootstrap-vue-next'
 
   .nav-link-item :deep(a),
   .nav-link-item :deep(.nav-link) {
-    color: rgba(53, 53, 53, 0.863) !important;
+    color: #aaa !important;
   }
 
   .nav-link-item :deep(a:hover),
@@ -127,6 +180,16 @@ import { BNavItem, BNav } from 'bootstrap-vue-next'
 
   .nav-link-item :deep(.nav-link.active) {
     color: #fff !important;
+  }
+
+  .contact-button {
+    color: #8b5cf6 !important;
+    border-color: #8b5cf6;
+  }
+
+  .contact-button:hover {
+    background-color: #8b5cf6;
+    color: white !important;
   }
 }
 </style>

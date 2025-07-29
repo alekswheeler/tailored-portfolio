@@ -8,20 +8,32 @@ import CutsomFooter from './components/Cutsom-Footer.vue'
 
 const projects = [
   {
-    title: 'API de Gerenciamento de Tarefas',
-    description:
-      'Sistema backend para organização de projetos com autenticação JWT e validação de dados completa.',
-    technologies: ['Node.js', 'Express', 'MongoDB', 'JWT'],
-    repositoryUrl: 'https://github.com/usuario/task-api',
-    status: 'Em desenvolvimento',
-  },
-  {
     title: 'Práticas em IA',
     description:
       'Academic and personal experiments in Machine Learning: AutoDiff, Neural Networks, Clustering, and Data Analysis. (Jupyter/Colab Notebooks)',
     technologies: ['Python', 'Google Colab', 'Machine Learn', 'AI'],
     repositoryUrl: 'https://github.com/alekswheeler/ai-practices',
-    status: 'Em desenvolvimento',
+  },
+  {
+    title: 'Simulador de Shell com Gerenciamento de Sinais, Processos e Zombies em C',
+    description:
+      'Simulador de terminal interativo (shell) desenvolvido em C, o Vaccine Shel (vsh) introduz o conceito de processos imunes a sinais (SIGUSR1, SIGUSR2) e gerencia execução em foreground e background, com tratamento de zombies, grupos de processos e comandos especiais. O shell implementa comportamento avançado de sinais, imitando características reais de sistemas operacionais.',
+    technologies: ['C', 'Sistemas Operacionais', 'sinais POSIX', 'fork/exec', 'processos UNIX'],
+    repositoryUrl: 'https://github.com/alekswheeler/Trabalho-de-Sistemas-Operacionais',
+  },
+  {
+    title: 'Detectando Conflitos em Transações SQL com DFS',
+    description:
+      'Projeto acadêmico focado na verificação de serializabilidade de transações no banco de dados, utilizando PostgreSQL e algoritmos de grafos. O sistema constrói dinamicamente um grafo de precedência entre transações e detecta ciclos com busca em profundidade (DFS), determinando se o escalonamento é seguro. A execução é automatizada com scripts e testes em container Docker.',
+    technologies: ['PL/pgSQL', 'SQL Avançado', 'Docker', 'Makefile'],
+    repositoryUrl: 'https://github.com/alekswheeler/transactions-sql',
+  },
+  {
+    title: 'Doar computadores',
+    description:
+      'Criar uma API para doação de computadores e aparelhos eletrônicos utilizando NodeJS. A APi fornece os serviços de registrar a doação e guardar esses dados',
+    technologies: ['Node.js', 'Express', 'Typescript'],
+    repositoryUrl: 'https://github.com/alekswheeler/doar-computadores',
   },
   {
     title: 'cash-me',
@@ -29,7 +41,6 @@ const projects = [
       'Projeto nodejs backend para transferência de valores entre os usuários. É possível fazer login, fornecendo username e password e visualizar o seu próprio saldo.',
     technologies: ['PostgreSQL', 'Typescript', 'typeORM', 'docker'],
     repositoryUrl: 'https://github.com/alekswheeler/cash-me',
-    status: 'Em desenvolvimento',
   },
 ]
 </script>
@@ -72,7 +83,7 @@ const projects = [
           <section class="projects-section">
             <h2>Projetos</h2>
 
-            <div class="projects-list">
+            <div id="projects" class="projects-list">
               <ProjectItem
                 v-for="project in projects"
                 :key="project.title"
@@ -80,12 +91,17 @@ const projects = [
                 :description="project.description"
                 :technologies="project.technologies"
                 :repository-url="project.repositoryUrl"
-                :status="project.status"
               />
             </div>
           </section>
         </div>
       </article>
+      <MyTextArea>
+        <h4>🚀 Gostou de algum projeto ou quer saber mais?</h4>
+
+        <p>Estou aberto a conversas, oportunidades e feedbacks. É só entrar em contato :)</p>
+        <a href="mailto:aleks.vix@outlook.com" class="simple-button"> Entre em contato </a>
+      </MyTextArea>
     </main>
     <CutsomFooter />
   </body>
@@ -107,7 +123,7 @@ const projects = [
 h1,
 h2,
 h3 {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .projects-section {
@@ -118,5 +134,22 @@ h3 {
 
 .projects-list {
   margin-top: 2rem;
+}
+
+.simple-button {
+  display: inline-block;
+  color: #666;
+  text-decoration: none !important;
+  font-size: 0.9rem;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  background: transparent !important;
+}
+
+.simple-button:hover {
+  color: #8b5cf6 !important;
+  border-color: #8b5cf6 !important;
 }
 </style>

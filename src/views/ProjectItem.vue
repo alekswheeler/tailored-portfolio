@@ -5,9 +5,6 @@
     <!-- Título e Status -->
     <div class="project-header">
       <h3 class="project-title">{{ props.title }}</h3>
-      <span class="project-status" :class="getStatusColor(props.status)">
-        {{ props.status }}
-      </span>
     </div>
 
     <!-- Descrição -->
@@ -44,19 +41,6 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   status: 'Concluído',
 })
-
-const getStatusColor = (status: string) => {
-  switch (status) {
-    case 'Em desenvolvimento':
-      return 'text-blue-600'
-    case 'Concluído':
-      return 'text-green-600'
-    case 'Pausado':
-      return 'text-gray-500'
-    default:
-      return 'text-gray-600'
-  }
-}
 </script>
 
 <style scoped>
