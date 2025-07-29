@@ -1,6 +1,6 @@
 # tailored-portfolio
 
-A clean, minimalistic portfolio built with React and Tailwind CSS to highlight my work and passion for software development. 
+A clean, minimalistic portfolio built with React and Tailwind CSS to highlight my work and passion for software development.
 
 ## Type Support for `.vue` Imports in TS
 
@@ -33,3 +33,9 @@ npm run build
 ```sh
 npm run lint
 ```
+
+toAleks: minha ideia é fazer um grid na área de projetos. Assim fica um pequeno outro grande, em grade memso
+
+- Ajustar a fonte
+- Verificar a responsividade
+- Adicionar redes sociais no topo (github linkedin)
