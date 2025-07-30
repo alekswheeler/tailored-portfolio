@@ -23,12 +23,12 @@ a,
 
 @media (min-width: 1024px) {
   body {
-    place-items: center;
+    /* place-items: center; */
     /* font-family: var(--font-test); Não funciona */
     font-family: 'Outfit', sans-serif;
     font-weight: 100;
-    width: 50%;
-    overflow: hidden;
+    width: 60%;
+    min-width: 400px;
   }
 
   #app {

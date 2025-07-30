@@ -2,10 +2,11 @@
   <div class="navbar-container">
     <b-nav class="minimal-nav">
       <div class="nav-links">
-        <b-nav-item href="#projects" class="nav-link-item">projetos</b-nav-item>
+        <b-nav-item href="/#projects" class="nav-link-item">projetos</b-nav-item>
         <b-nav-item href="https://dev.to/alekswheeler" target="_blank" class="nav-link-item">
           blog
         </b-nav-item>
+        <b-nav-item to="/experience" class="nav-link-item">Experiência</b-nav-item>
       </div>
       <a href="mailto:aleks.vix@outlook.com" class="contact-button"> Enviar mensagem </a>
     </b-nav>
@@ -18,9 +19,9 @@ import { BNavItem, BNav } from 'bootstrap-vue-next'
 
 <style scoped>
 .navbar-container {
-  padding: 1.5rem 0;
+  padding: 1rem 0 1rem 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   background: transparent;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
@@ -33,12 +34,12 @@ import { BNavItem, BNav } from 'bootstrap-vue-next'
   max-width: 1200px;
   list-style: none;
   margin: 0;
-  padding: 0 2rem;
+  padding: 1rem 0 1rem 0;
 }
 
 .nav-links {
   display: flex;
-  gap: 2.5rem;
+  gap: 1.5rem;
   align-items: center;
 }
 
@@ -91,7 +92,7 @@ import { BNavItem, BNav } from 'bootstrap-vue-next'
 
 /* Remover estilos do Bootstrap */
 .nav-link-item :deep(.nav-link.active) {
-  color: #333 !important;
+  color: #666 !important;
   background: transparent !important;
   border: none !important;
 }
@@ -108,6 +109,7 @@ import { BNavItem, BNav } from 'bootstrap-vue-next'
   transition: all 0.3s ease;
   letter-spacing: 0.3px;
   background: transparent;
+  width: auto;
 }
 
 .contact-button:hover {
@@ -163,7 +165,7 @@ import { BNavItem, BNav } from 'bootstrap-vue-next'
 }
 
 /* Tema escuro (opcional) */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   .navbar-container {
     border-bottom-color: rgba(255, 255, 255, 0.1);
   }
@@ -191,5 +193,5 @@ import { BNavItem, BNav } from 'bootstrap-vue-next'
     background-color: #8b5cf6;
     color: white !important;
   }
-}
+} */
 </style>

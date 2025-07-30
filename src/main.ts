@@ -7,7 +7,9 @@ import 'bootstrap-vue-next/dist/bootstrap-vue-next.css'
 
 // Vue Bootstrap
 import { createBootstrap } from 'bootstrap-vue-next'
+import router from './router'
 
 const app = createApp(App)
 app.use(createBootstrap())
+app.use(router)
 app.mount('#app')

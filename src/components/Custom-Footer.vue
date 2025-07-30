@@ -7,7 +7,14 @@
         e Vue
       </p>
       <p class="footer-author">Aleks Wheeler</p>
-      <a href="#" class="source-link" target="_blank" rel="noopener noreferrer"> Source code </a>
+      <a
+        href="https://github.com/alekswheeler/tailored-portfolio"
+        class="source-link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Source code
+      </a>
     </div>
   </footer>
 </template>

@@ -7,7 +7,7 @@ interface Props {
 
 const props = withDefaults(defineProps<Props>(), {
   githubUrl: 'https://github.com/alekswheeler',
-  linkedinUrl: 'https://www.linkedin.com/feed/',
+  linkedinUrl: 'https://www.linkedin.com/in/alekswheeler/',
 })
 </script>
 
